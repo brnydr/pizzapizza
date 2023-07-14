@@ -13,9 +13,6 @@ class Order {
         return this.currentId;
     }
 
-    removePizza(id) {
-       delete this.pizzas[id];
-    }
  }
 
 class Pizza {
@@ -24,3 +21,31 @@ class Pizza {
         this.toppings = toppings;
     }
 }
+
+let order = new Order();
+
+//not adding toppings
+function addPizzaToOrder() {
+    let size = document.getElementById("size").value;
+    let toppings = [];
+    let checkboxes = document.querySelectorAll('input[type=checkbox]:checked'); 
+    for (let i = 0; i < checkboxes.length; i++) {
+        toppings.push(checkboxes[i]);
+    }
+    let pizza = new Pizza(size, toppings);
+    order.addPizza(pizza);
+
+}
+
+function displayPizzas() {
+
+}
+
+// function finalizeOrder(e) {
+// e.preventDefault();
+// }
+
+window.addEventListener("load", function() {
+    document.getElementById("addPizza").addEventListener("click", addPizzaToOrder());
+    // document.querySelector("form").addEventListener("submit", finalizeOrder());
+});

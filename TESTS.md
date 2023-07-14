@@ -54,3 +54,15 @@ It should assign an id to a pizza object
 `newOrder = {currentId: 1, pizzas: {1: {size: "", toppings: []}}}`
 
 *pass*
+
+# Describe:
+`Order.prototype.removePizza()`
+
+## Test:
+It should remove a pizza object from the pizzas property of the order object
+
+## Code:
+`newOrder.removePizza(1)`
+
+## Expected Output:
+`newOrder = {currentId: 1, pizzas: {}}`

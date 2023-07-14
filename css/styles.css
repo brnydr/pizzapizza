@@ -25,7 +25,7 @@ h1 {
 body {
     background-image: url(https://www.seekpng.com/png/detail/340-3401972_pepperoni-pizza-slice-cheese-pizza-slice-png.png);
     background-repeat: no-repeat;
-    background-size: 1500px;
+    background-size: 1400px;
     background-position: center;
     background-attachment: fixed;
 }
@@ -46,4 +46,18 @@ label {
 
 .hidden {
     display: none;
+}
+
+#orderSummary {
+    font-family: 'Press Start 2P';
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #b33d3d;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px;
+    position:relative;
+
 }

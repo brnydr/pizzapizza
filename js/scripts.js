@@ -12,7 +12,11 @@ class Order {
         this.currentId += 1;
         return this.currentId;
     }
-}
+
+    removePizza(id) {
+       delete this.pizzas[id];
+    }
+ }
 
 class Pizza {
     constructor(size, toppings) {

@@ -12,3 +12,16 @@ It should create a new order object
 
 *pass*
 
+## Describe: 
+'Pizza()'
+
+## Test:
+It should create a new pizza object
+
+## Code:
+`let newPizza = new Pizza()`
+
+## Expected Output:
+`newPizza = {size: "", toppings: []}`
+
+*pass*

@@ -1,6 +1,6 @@
 class Order {
     constructor() {
-        this.pizzas = {};
+        this.pizzas = [];
         this.currentId = 0;
     }
     addPizza(pizza) {
@@ -19,26 +19,40 @@ class Pizza {
     constructor(size, toppings) {
         this.size = size;
         this.toppings = toppings;
+        this.price = 0;
     }
 }
 
 let order = new Order();
 
-//not adding toppings
-function addPizzaToOrder() {
-    let size = document.getElementById("size").value;
+function getToppings() {
     let toppings = [];
     let checkboxes = document.querySelectorAll('input[type=checkbox]:checked'); 
-    for (let i = 0; i < checkboxes.length; i++) {
-        toppings.push(checkboxes[i]);
-    }
+    checkboxes.forEach(function(checkbox) {
+        toppings.push(checkbox.value);
+    });
+    return toppings;
+}
+//not adding toppings
+function addPizzaToOrder() {
+    
+    let size = document.getElementById("size").value;
+    let toppings = getToppings();
     let pizza = new Pizza(size, toppings);
     order.addPizza(pizza);
-
+    displayPizzas(pizza)
 }
 
-function displayPizzas() {
 
+
+function displayPizzas(pizza) {
+    let li = document.createElement("li");
+    let pizzaList = document.getElementById("pizzaList");
+    pizzaList.append(li);
+    li.innerText
+    let pizzaString = pizza.size + " with " + pizza.toppings;
+    li.innerText = pizzaString;
+    document.querySelector("#orderSummary").classList.remove("hidden");
 }
 
 // function finalizeOrder(e) {
@@ -46,6 +60,6 @@ function displayPizzas() {
 // }
 
 window.addEventListener("load", function() {
-    document.getElementById("addPizza").addEventListener("click", addPizzaToOrder());
+    document.getElementById("addPizza").addEventListener("click", addPizzaToOrder);
     // document.querySelector("form").addEventListener("submit", finalizeOrder());
 });

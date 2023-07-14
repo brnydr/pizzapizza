@@ -4,15 +4,41 @@ h1 {
     font-family: 'Press Start 2P';
 }
 
+.white {
+    color: white;
+}
+
+#finished {
+    font-family: 'Press Start 2P';
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff0000;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px;
+    position:relative;
+    top: 500px
+}
+
+body {
+    background-image: url(https://www.seekpng.com/png/detail/340-3401972_pepperoni-pizza-slice-cheese-pizza-slice-png.png);
+    background-repeat: no-repeat;
+    background-size: 1500px;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 p {
     font-family: 'Press Start 2P';
 }
 
-/*.bold {
+.bold {
     font-family: 'Press Start 2P';
     font-weight: bold;
     font-size: 15px;
-} */
+} 
   
 label {
     font-family: 'Press Start 2P';

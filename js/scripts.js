@@ -21,6 +21,6 @@ class Order {
 class Pizza {
     constructor(size, toppings) {
         this.size = size;
-        this.toppings = [];
+        this.toppings = toppings;
     }
 }

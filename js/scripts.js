@@ -15,7 +15,6 @@ class Order {
         this.currentId += 1;
         return this.currentId;
     }
-
  }
 
 class Pizza {
@@ -92,12 +91,11 @@ function displayPizzas(pizza) {
 }
 
 function finalizeOrder(e) {
-e.preventDefault();
-let orderTotal = document.getElementById("orderTotal");
-let orderDiv = document.getElementById("orderDiv");
-orderDiv.classList.add("hidden");
-orderTotal.innerText = "Your total is $" + order.totalCost;
-
+    e.preventDefault();
+    let orderTotal = document.getElementById("orderTotal");
+    let orderDiv = document.getElementById("orderDiv");
+    orderDiv.classList.add("hidden");
+    orderTotal.innerText = "Your total is $" + order.totalCost;
 }
 
 window.addEventListener("load", function() {

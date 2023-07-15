@@ -61,3 +61,7 @@ label {
     position:relative;
 
 }
+
+.small {
+    font-size: 3px;
+}

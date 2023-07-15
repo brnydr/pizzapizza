@@ -34,7 +34,7 @@ function getToppings() {
     });
     return toppings;
 }
-//not adding toppings
+
 function addPizzaToOrder() {
     let size = document.getElementById("size").value;
     let toppings = getToppings();

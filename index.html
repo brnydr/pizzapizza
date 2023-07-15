@@ -9,57 +9,55 @@
     <title>A Neighborhood Pizza</title>
 </head>
 <body>
-    <h1>Brian's Famous(ish) Pizza!</h1>
-    <p>Place your order below!</p>
-    <br>
-    <form id="orderForm">
-        <p class="bold">Select a size (we recommend the XL):</p>
-        <select id="size" class="bold">
-            <option value="small">Small($10)</option>
-            <option value="medium">Medium($13)</option>
-            <option value="large" selected>Large($15)</option>
-            <option value="xl">XL($16)</option>
-            <p id="orderMessage" class="hidden"></p>
-        </select>
+    <div id="orderDiv">
+        <h1>Brian's Famous(ish) Pizza!</h1>
+        <p>Place your order below!</p>
         <br>
-        <br>
-        <p class="bold">Select your toppings:</p>
-        <label>Pepporoni</label>
-        <input type="checkbox" id="pepporoni" name="pepporoni" value="pepporoni">
-        <br>
-        <label>Sausage</label>
-        <input type="checkbox" id="sausage" name="sausage" value="sausage">
-        <br>
-        <label>Mushrooms</label>   
-        <input type="checkbox" id="mushrooms" name="mushrooms" value="mushrooms">
-        <br>
-        <label>Olives</label>
-        <input type="checkbox" id="olives" name="olives" value="olives">
-        <br>
-        <label>Spaghetti</label>
-        <input type="checkbox" id="spaghetti" name="spaghetti" value="spaghetti">
-        <br>
-        <br>
-        <button type="button" id="addPizza" class="btn btn-secondary">Add Pizza</button>
-        <br>
-       
-        <p class="bold" id="finished">Finished with your order? Click submit to finish!</span></p>
-        <button type="submit" id="submitOrder" class="btn btn-primary">Submit Order</button>
-    </form>
+        <form id="orderForm">
+            <p class="bold">Select a size (we recommend the XL):</p>
+            <select id="size" class="bold">
+                <option value="small">Small($10)</option>
+                <option value="medium">Medium($13)</option>
+                <option value="large">Large($15)</option>
+                <option value="xl" selected>XL($16)</option>
+                <p id="orderMessage" class="hidden"></p>
+            </select>
+            <br>
+            <br>
+            <p class="bold">Select your toppings:</p>
+            <p class="bold small">(Each topping $1!)</p>
+            <label>Pepporoni</label>
+            <input type="checkbox" id="pepperoni" name="pepperoni" value="pepperoni">
+            <br>
+            <label>Sausage</label>
+            <input type="checkbox" id="sausage" name="sausage" value="sausage">
+            <br>
+            <label>Mushrooms</label>   
+            <input type="checkbox" id="mushrooms" name="mushrooms" value="mushrooms">
+            <br>
+            <label>Olives</label>
+            <input type="checkbox" id="olives" name="olives" value="olives">
+            <br>
+            <label>Spaghetti</label>
+            <input type="checkbox" id="spaghetti" name="spaghetti" value="spaghetti">
+            <br>
+            <br>
+            <button type="button" id="addPizza" class="btn btn-secondary">Add Pizza</button>
+            <br>
+            <p class="bold" id="finished">Finished with your order? Click submit to finish!</span></p>
+            <button type="submit" id="submitOrder" class="btn btn-primary">Submit Order</button>
+        </form>
+    </div>
     <div id="orderSummary" class="hidden">
         <p class="bold">Order Summary:</p>
-        <p id="pizzas">
-            <ul id="pizzaList">
-            </ul>
-        </p>
+        <ul id="pizzaList">
+        </ul>
         <p><span id="orderTotal"></span></p>
     </div>
-    <div>
-        <p id="orderMessage" class="hidden">
-            <ul id="finalOrder">    
-            </ul>
-        </p>
-
+   
+    <div id="orderMessage" class="hidden">
+        <p>Your order is complete!</p>
+        <p>Thank you for ordering from Brian's Famous(ish) Pizza!</p>
     </div>
 </body>
 </html>

@@ -1,3 +1,5 @@
+//Business Logic
+
 class Order {
     constructor() {
         this.pizzas = [];
@@ -26,35 +28,8 @@ class Pizza {
 
 let order = new Order();
 
-function getToppings() {
-    let toppings = [];
-    let checkboxes = document.querySelectorAll('input[type=checkbox]:checked'); 
-    checkboxes.forEach(function(checkbox) {
-        toppings.push(checkbox.value);
-    });
-    return toppings;
-}
+//UI Logic
 
-function addPizzaToOrder() {
-    let size = document.getElementById("size").value;
-    let toppings = getToppings();
-    let pizza = new Pizza(size, toppings);
-    price = determinePrice(pizza);
-    pizza.price = price;
-    order.totalCost += price;
-    order.addPizza(pizza);
-    displayPizzas(pizza)
-    size.value = "xl";
-    resetCheckboxes();
-}
-
-function resetCheckboxes() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach((checkbox) => {
-      checkbox.checked = false;
-    });
-  }
-  
 function determinePrice(pizza) {
     let price = 0;
     if (pizza.size === "xl") {
@@ -70,6 +45,35 @@ function determinePrice(pizza) {
         price += 1;
     });
     return price;
+}
+
+function getToppings() {
+    let toppings = [];
+    let checkboxes = document.querySelectorAll('input[type=checkbox]:checked'); 
+    checkboxes.forEach(function(checkbox) {
+        toppings.push(checkbox.value);
+    });
+    return toppings;
+}
+
+function resetCheckboxes() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = false;
+    });
+  }
+
+function addPizzaToOrder() {
+    let size = document.getElementById("size").value;
+    let toppings = getToppings();
+    let pizza = new Pizza(size, toppings);
+    price = determinePrice(pizza);
+    pizza.price = price;
+    order.totalCost += price;
+    order.addPizza(pizza);
+    displayPizzas(pizza)
+    size.value = "xl";
+    resetCheckboxes();
 }
 
 function displayPizzas(pizza) {

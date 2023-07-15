@@ -90,10 +90,7 @@ function displayPizzas(pizza) {
 function finalizeOrder(e) {
 e.preventDefault();
 let orderTotal = document.getElementById("orderTotal");
-let orderMessage = document.getElementById("orderMessage");
-
 let orderDiv = document.getElementById("orderDiv");
-orderMessage.innerText = "Your total is $" + order.totalCost;
 orderDiv.classList.add("hidden");
 orderTotal.innerText = "Your total is $" + order.totalCost;
 

@@ -29,6 +29,20 @@ let order = new Order();
 
 //UI Logic
 
+function createResetButton() {
+    let newDiv = document.createElement("div");
+    let orderDiv = document.getElementById("orderSummary");
+    let resetButton = document.createElement("button");
+    newDiv.append(resetButton);
+    resetButton.innerText = "Create a new order";
+    resetButton.setAttribute("id", "resetButton");
+    resetButton.setAttribute("type", "button");
+    resetButton.setAttribute("class", "btn btn-warning")
+    orderDiv.after(newDiv);
+    resetButton.addEventListener("click", resetPage);
+}
+
+
 function determinePrice(pizza) {
     let price = 0;
     if (pizza.size === "xl") {
@@ -40,7 +54,7 @@ function determinePrice(pizza) {
     } else if (pizza.size === "small") {
         price += 10;
     }
-    pizza.toppings.forEach(function(topping) {
+    pizza.toppings.forEach(function(){
         price += 1;
     });
     return price;
@@ -70,7 +84,7 @@ function addPizzaToOrder() {
     pizza.price = price;
     order.totalCost += price;
     order.addPizza(pizza);
-    displayPizzas(pizza)
+    displayPizzas(pizza);
     size.value = "xl";
     resetCheckboxes();
 }
@@ -80,7 +94,6 @@ function displayPizzas(pizza) {
     let pizzaList = document.getElementById("pizzaList");
     let pizzaString = "";
     pizzaList.append(li);
-    li.innerText
     if (pizza.toppings.length === 0) {
         pizzaString = pizza.size + " with just cheese" + " $" + pizza.price;
     } else {
@@ -96,6 +109,11 @@ function finalizeOrder(e) {
     let orderDiv = document.getElementById("orderDiv");
     orderDiv.classList.add("hidden");
     orderTotal.innerText = "Your total is $" + order.totalCost;
+    createResetButton();
+}
+
+function resetPage() {
+    location.reload();
 }
 
 window.addEventListener("load", function() {
